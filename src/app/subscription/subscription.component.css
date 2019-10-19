@@ -1,0 +1,18 @@
+hr {
+  background-color: white;
+}
+
+.card {
+  width: 18rem;
+  background-color: #003366;
+  color: white;
+  height: 100%;
+}
+
+.card-title {
+  padding-top: 70px;
+}
+
+.btn {
+  border-radius: 20px;
+}

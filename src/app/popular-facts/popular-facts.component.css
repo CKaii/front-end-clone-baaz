@@ -1,0 +1,27 @@
+footer {
+  font-size: 14px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.card {
+  width: 17rem;
+  justify-content: flex-end;
+}
+
+.card-title {
+  font-size: 18px;
+}
+
+.badge {
+  background-color: red;
+  border-radius: 100%;
+  color: white;
+}
+
+img {
+  width: auto;
+  height: 150px;
+}

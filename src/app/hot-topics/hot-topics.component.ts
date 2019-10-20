@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./hot-topics.component.css']
 })
 export class HotTopicsComponent implements OnInit {
-  constructor() {}
-
   news: any;
   @Input() newsInput;
 

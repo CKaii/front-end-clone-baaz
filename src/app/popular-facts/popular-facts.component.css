@@ -11,6 +11,10 @@ footer {
   justify-content: flex-end;
 }
 
+.card:hover {
+  opacity: 0.7;
+}
+
 .card-title {
   font-size: 18px;
 }

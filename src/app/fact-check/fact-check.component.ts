@@ -8,14 +8,10 @@ import { DataService } from '../data.service';
   styleUrls: ['./fact-check.component.css']
 })
 export class FactCheckComponent implements OnInit {
-  news$: News[];
-
-  constructor(private dataService: DataService) {}
+  news: News;
+  @Input() newsInput: News;
 
   ngOnInit() {
-    return this.dataService.getNews().subscribe(data => (this.news$ = data));
+    this.news = this.newsInput;
   }
 }
-
-// *ngFor="let news of news$"
-// [newsInput]="news"

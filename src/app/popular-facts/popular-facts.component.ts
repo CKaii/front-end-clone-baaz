@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./popular-facts.component.css']
 })
 export class PopularFactsComponent implements OnInit {
-  constructor() {}
-
   news: any;
   @Input() newsInput;
 

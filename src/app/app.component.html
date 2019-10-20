@@ -3,34 +3,40 @@
   <div class="container-fluid px-4">
     <h2 class="pt-5">Fact Check</h2>
     <div class="row mt-3 mb-3 px-0">
-      <div class="col-md-9">
-        <app-fact-check></app-fact-check>
-        <app-fact-check></app-fact-check>
-        <app-fact-check></app-fact-check>
+      <div *ngIf="isLoaded" class="col-md-9">
+        <app-fact-check [newsInput]="news$[0]"></app-fact-check>
+        <app-fact-check [newsInput]="news$[1]"></app-fact-check>
+        <app-fact-check [newsInput]="news$[2]"></app-fact-check>
       </div>
       <div class="col-md-3 mt-3 mb-2">
         <app-subscription></app-subscription>
       </div>
     </div>
   </div>
-  <div class="container-fluid bg-dark pb-4 mt-3 px-5">
-    <app-hot-topics></app-hot-topics>
+  <div *ngIf="isLoaded" class="container-fluid bg-dark pb-4 mt-3 px-5">
+    <app-hot-topics [newsInput]="news$[0]"></app-hot-topics>
   </div>
   <div class="container-fluid px-4">
     <div
       class="search-results"
       infiniteScroll
       [infiniteScrollDistance]="2"
-      [infiniteScrollThrottle]="50"
+      [infiniteScrollThrottle]="500"
       (scrolled)="onScroll()"
     >
       <div class="row mt-3 mb-3">
-        <div class="col-md-9">
-          <app-fact-check></app-fact-check>
+        <div class="col-md-9" *ngIf="isLoaded">
+          <app-fact-check
+            *ngFor="let element of news$"
+            [newsInput]="element"
+          ></app-fact-check>
         </div>
-        <div class="col-md-3 mt-3 mb-3">
+        <div class="col-md-3 mt-3 mb-3" *ngIf="isLoaded">
           <h5><b>Popular Fact Checks</b></h5>
-          <app-popular-facts></app-popular-facts>
+          <app-popular-facts
+            *ngFor="let element of news$"
+            [newsInput]="element"
+          ></app-popular-facts>
         </div>
       </div>
     </div>
